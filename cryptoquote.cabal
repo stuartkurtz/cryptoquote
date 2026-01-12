@@ -1,0 +1,20 @@
+cabal-version:      3.0
+name:               cryptoquote
+version:            0.1.0.0
+synopsis:           A crytoquote game
+build-type:         Simple
+data-dir:           data
+data-files:         quotations.enc, words.txt
+
+common std
+    ghc-options: -Wall
+    build-depends:    base, random
+    hs-source-dirs:   app
+    default-language: Haskell2010
+
+executable cryptoquote
+    import:           std
+    main-is:          Main.hs
+    other-modules:    Assoc, Paths_cryptoquote
+    autogen-modules:  Paths_cryptoquote
+
